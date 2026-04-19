@@ -1,12 +1,12 @@
 import { readTasks, writeTasks } from "./data";
 
-// GET all tasks
+// Get all taks
 export async function GET() {
   const tasks = await readTasks();
   return Response.json(tasks);
 }
 
-// POST new task
+// POST 
 export async function POST(req: Request) {
   const body = await req.json();
 

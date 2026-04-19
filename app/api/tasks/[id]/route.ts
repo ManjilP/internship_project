@@ -1,6 +1,6 @@
 import { readTasks, writeTasks } from "../data";
 
-// GET one task (also makes “open in browser” show JSON instead of an empty body)
+
 export async function GET(
   _: Request,
   context: { params: Promise<{ id: string }> }

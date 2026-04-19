@@ -11,7 +11,7 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  // 📥 Load tasks
+  //Load tasks
   useEffect(() => {
     setLoading(true);
     setError("");
@@ -33,7 +33,7 @@ export default function Home() {
       .finally(() => setLoading(false));
   }, []);
 
-  // ➕ ADD TASK
+  // Add task
   const addTask = async (text: string) => {
     if (!text.trim()) return;
 
@@ -53,7 +53,7 @@ export default function Home() {
     }
   };
 
-  // ❌ DELETE TASK
+  // Delete Task
   const deleteTask = async (id: string) => {
     try {
       const res = await fetch(`/api/tasks/${encodeURIComponent(id)}`, {
@@ -73,7 +73,7 @@ export default function Home() {
     }
   };
 
-  // ✏️ UPDATE TASK
+  // Update task
   const updateTask = async (id: string, text: string) => {
     try {
       const res = await fetch(`/api/tasks/${encodeURIComponent(id)}`, {
@@ -100,7 +100,7 @@ export default function Home() {
     }
   };
 
-  // 🧹 CLEAR ALL (frontend only)
+  // Clear tasks
   const handleClear = () => {
     setTasks([]);
   };
@@ -109,25 +109,25 @@ export default function Home() {
     <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
       <div className="w-full max-w-md bg-white rounded-2xl shadow-lg p-6 space-y-5">
 
-        {/* Header */}
+        {}
         <h1 className="text-xl font-semibold text-center text-gray-700">
           Task Manager
         </h1>
 
-        {/* Input */}
+        {}
         <TaskInput onAdd={addTask} />
 
-        {/* Loading */}
+        {}
         {loading && (
           <p className="text-center text-gray-500">Loading...</p>
         )}
 
-        {/* Error */}
+        {}
         {error && (
           <p className="text-center text-red-500">{error}</p>
         )}
 
-        {/* Task List */}
+        {}
         {!loading && (
           <TaskList
             tasks={tasks}
@@ -136,10 +136,10 @@ export default function Home() {
           />
         )}
 
-        {/* Empty State */}
+        {}
        
 
-        {/* Clear Button */}
+        {}
         <button
           onClick={handleClear}
           className="w-full bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition"
